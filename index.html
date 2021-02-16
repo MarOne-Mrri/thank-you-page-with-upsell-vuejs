@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="fixed w-full top-0">
         <nav class="flex md:justify-between justify-center bg-blue-700 shadow-2xl flex-wrap">
             <a href="" class="p-4 text-white text-2xl font-black"><i></i> StoreIno</a>
             <ul class="list-none py-6 pr-6">
@@ -21,8 +21,8 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <section class="mx-8 mt-8 mb-12">
+    <main class="mt-32">
+        <section class="mx-16 mt-8 mb-12">
             <div class="flex justify-between flex-wrap">
                 <h1 class="text-6xl">thanks <br /> for your order !</h1>
                 <img src="./assets/deliver.jpeg" alt="delivery" />
@@ -31,13 +31,13 @@
         <h3 class="text-center text-4xl font-black">You also might like</h3>
         <section class="m-8 flex justify-evenly flex-wrap">
             <div class="w-64 border rounded bg-blue-700 m-6" v-for="item in products">
-                <img src="./assets/product.jpeg" alt="product" class="" />
+                <img :src="item.image" alt="product" class="" />
                 <div class="p-6 text-white">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, nostrum. Id deleniti saepe
-                        odio?{{item}}
+                    <p>
+                        {{item.description}}
                     </p>
-                    <h3 class="text-xl font-black">80.99$</h3>
-                    <span class="italic"><del>120.56$</del></span>
+                    <h3 class="text-xl font-black">{{item.reduction}}$</h3>
+                    <span class="italic"><del>{{item.reduction}}$</del></span>
                 </div>
             </div>
         </section>
